@@ -4,8 +4,8 @@ namespace Rave.Utils
 {
     public static class Connection
     {
-        private static string database = "DBANow";
-        private static string salt = "DBA";
+        private static string database = "Rave";
+        private static string salt = "RAVE";
 
         public static string Name { get
             {
@@ -16,10 +16,10 @@ namespace Rave.Utils
 
         public static string GetCnn(string AppName)
         {
-            string hostname = WebUtils.GetAppSetting("hostname");
-            string port = WebUtils.GetAppSetting("port");
-            string username = Crypto.DecryptStringAES( WebUtils.GetAppSetting("username"), salt);
-            string password = Crypto.DecryptStringAES(WebUtils.GetAppSetting("password"), salt);
+            string hostname = "SQL-01";
+            string port = "1433";
+            string username = "RaveUsr";
+            string password = "$.HN)e3eq^*&8M$z";
 
             return "Data Source="+hostname + ","+ port + ";Initial Catalog="+ database + "; User ID="+ username + "; Password="+ password + "";
         }

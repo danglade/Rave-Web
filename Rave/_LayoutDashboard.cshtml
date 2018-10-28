@@ -3,9 +3,8 @@
 
 @{
     DataSet ses = (DataSet)HttpContext.Current.Session["UsrDs"];
-    var controllerName = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();
-    var user_label = ses.Tables[0].Rows[0][0].ToString();
-    var first_name = ses.Tables[0].Rows[0]["first_name"].ToString();
+    var controllerName = HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString();    
+    var first_name = ses.Tables[0].Rows[0]["name"].ToString();
 }
 
 <!DOCTYPE html>
@@ -383,7 +382,7 @@
                             </div>
 
                             <div class="media-body">
-                                <div class="media-title font-weight-semibold">@user_label</div>
+                                <div class="media-title font-weight-semibold">@first_name</div>
                                 <div class="font-size-xs opacity-50">
                                     <i class="icon-pin font-size-sm"></i> &nbsp;Santa Ana, CA
                                 </div>
@@ -400,30 +399,30 @@
                 <div class="card card-sidebar-mobile">
                     <ul class="nav nav-sidebar" data-nav-type="accordion">
                         <!-- Main -->
-                        @{ DataTable parents = DBATools.Utils.Layout.GetParents(ses.Tables[4]);}
+                        @{ DataTable parents = Rave.Utils.Layout.GetParents(ses.Tables[4]);}
 
                         @foreach (DataRow parent in parents.Rows)
                         {
                             <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">@parent["name"].ToString()</div> <i class="icon-menu" title="Layout options"></i></li>
 
-                            foreach (DataRow first_child in DBATools.Utils.Layout.GetChildrens(ses.Tables[4], parent["id"].ToString()).Rows)
+                            foreach (DataRow first_child in Rave.Utils.Layout.GetChildrens(ses.Tables[4], parent["id"].ToString()).Rows)
                             {
                                 <li class="nav-item nav-item-submenu" )">
                                     <a href="@first_child["url"].ToString()" class="nav-link @(controllerName == first_child["url"].ToString() ? " active" : "")"><i class="@first_child["icon"].ToString()"></i> <span>@first_child["name"].ToString()</span></a>
 
                                     <ul class="nav nav-group-sub" data-submenu-title="@first_child["name"].ToString()" style="display: none;">
-                                        @foreach (DataRow second_child in DBATools.Utils.Layout.GetChildrens(ses.Tables[4], first_child["id"].ToString()).Rows)
+                                        @foreach (DataRow second_child in Rave.Utils.Layout.GetChildrens(ses.Tables[4], first_child["id"].ToString()).Rows)
                                         {
                                             <li class="nav-item nav-item-submenu" )">
                                                 <a href="@second_child["url"].ToString()" class="nav-link">@second_child["name"].ToString()</a>
 
-                                                @foreach (DataRow third_child in DBATools.Utils.Layout.GetChildrens(ses.Tables[4], second_child["id"].ToString()).Rows)
+                                                @foreach (DataRow third_child in Rave.Utils.Layout.GetChildrens(ses.Tables[4], second_child["id"].ToString()).Rows)
                                                 {
                                                     <ul class="nav nav-group-sub" style="display: none;">
                                                         <li class="nav-item" )"><a href="navbar_single_top_static.html" class="nav-link">@third_child["name"].ToString()</a></li>
                                                     </ul>
 
-                                                    foreach (DataRow fourth_child in DBATools.Utils.Layout.GetChildrens(ses.Tables[4], third_child["id"].ToString()).Rows)
+                                                    foreach (DataRow fourth_child in Rave.Utils.Layout.GetChildrens(ses.Tables[4], third_child["id"].ToString()).Rows)
                                                     {
                                                         <ul class="nav nav-group-sub" style="display: block;">
                                                             <li class="nav-item"><a href="navbar_single_top_static.html" class="nav-link">@fourth_child["name"].ToString()</a></li>
@@ -460,7 +459,7 @@
 
                 <div class="navbar-collapse collapse" id="navbar-footer">
                     <span class="navbar-text">
-                        © 2015 - 2018. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
+                        © 2018 - 2019. <a href="#">Rave</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Raul Danglade</a>
                     </span>
 
                     <ul class="navbar-nav ml-lg-auto">

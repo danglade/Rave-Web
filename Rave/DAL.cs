@@ -8,7 +8,7 @@ namespace Rave
 {
     public static class DAL
     {
-        public const string AppName = "DBA Tool 1.0";
+        public const string AppName = "Rave Dashboard 1.0";
         private static string _Cnn;
         private static string _Env;
 
