@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2FAD8A60-1B3D-487F-8A37-32D38127465F}</ProjectGuid>
+    <ProjectGuid>{2B425DF2-F11D-4D58-825C-1D53370AD743}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Rave</RootNamespace>
-    <AssemblyName>Rave</AssemblyName>
+    <RootNamespace>Rave_Rest_API</RootNamespace>
+    <AssemblyName>Rave-Rest-API</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -48,6 +48,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -66,86 +67,42 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Web.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Webpages">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Webpages.Deployment">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Webpages.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Helpers">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.Infrastructure">
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\css\bootstrap.min.css" />
-    <Content Include="Assets\css\bootstrap_limitless.min.css" />
-    <Content Include="Assets\css\colors.min.css" />
-    <Content Include="Assets\css\components.min.css" />
-    <Content Include="Assets\css\extra\animate.min.css" />
-    <Content Include="Assets\css\layout.min.css" />
-    <Content Include="Assets\css\styles.css" />
-    <Content Include="Assets\fonts\icomoon.svg" />
-    <Content Include="Assets\images\backgrounds\boxed_bg.png" />
-    <Content Include="Assets\images\image.png" />
-    <Content Include="Assets\images\logo_dark.png" />
-    <Content Include="Assets\images\logo_light.png" />
-    <Content Include="Assets\images\placeholders\cover.jpg" />
-    <Content Include="Assets\images\placeholders\placeholder.jpg" />
-    <Content Include="Assets\images\placeholders\user.png" />
-    <Content Include="Assets\js\app.js" />
-    <Content Include="Assets\js\blockui.min.js" />
-    <Content Include="Assets\js\bootstrap.bundle.min.js" />
-    <Content Include="Assets\js\jquery.min.js" />
-    <Content Include="Assets\js\plugins\tables\datatables\datatables.min.js" />
-    <Content Include="Assets\js\ripple.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="CmdResult.cs" />
-    <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="DAL.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Usr.cs" />
-    <Compile Include="Utils\Connection.cs" />
-    <Compile Include="Utils\Crypto.cs" />
-    <Compile Include="Utils\Layout.cs" />
-    <Compile Include="Utils\WebUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Assets\fonts\icomoon.eot" />
-    <Content Include="Assets\fonts\icomoon.ttf" />
-    <Content Include="Assets\fonts\icomoon.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="_LayoutDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
@@ -161,9 +118,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62212</DevelopmentServerPort>
+          <DevelopmentServerPort>5732</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62212/</IISUrl>
+          <IISUrl>http://localhost:5732/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
