@@ -1,19 +1,30 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Web.Http;
-using System.Web.Mvc;
+
 
 namespace Rave_API.Controllers
 {
     public class HomeController : ApiController
     {
-        // GET: Home
-        public string Index([FromBody] JObject data)
+
+        public CmdResult Index([FromBody] JObject data)
         {
-            return "";
+            try
+            {
+                if (data == null)
+                {
+                    throw new System.Exception();
+                }
+
+                return DAL.HomeInitialize(data);
+            }
+            catch (System.Exception e)
+            {
+                return new CmdResult(-1, e.Message);
+            }
         }
+
+        
     }
 }

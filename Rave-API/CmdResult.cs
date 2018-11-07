@@ -40,6 +40,7 @@ namespace Rave_API
         public CmdResult(DataSet ds)
         {
             DataRow result = ds.Tables[ds.Tables.Count - 1].Rows[0];
+            ds.Tables[ds.Tables.Count - 1].TableName = "Result";
             _Code = System.Convert.ToInt32(result["code"]);
             _Msg = result["msg"].ToString().Replace("[[CRLF]]", System.Environment.NewLine);
             _Ds = ds;
@@ -57,6 +58,7 @@ namespace Rave_API
             _Code = aCode;
             _Msg = aMsg;
             DataTable codeTbl = new DataTable();
+            codeTbl.TableName = "Result";
             codeTbl.Columns.Add("code", typeof(int));
             codeTbl.Columns.Add("msg", typeof(string));
             codeTbl.Rows.Add(_Code, _Msg);
