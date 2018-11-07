@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rave-Dashboard", "Rave\Rave-Dashboard.csproj", "{2FAD8A60-1B3D-487F-8A37-32D38127465F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rave-API", "Rave-Rest-API\Rave-API.csproj", "{2B425DF2-F11D-4D58-825C-1D53370AD743}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rave-API", "Rave-API\Rave-API.csproj", "{49E46386-499F-4F18-B026-D6EF0D0CE80C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{2FAD8A60-1B3D-487F-8A37-32D38127465F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FAD8A60-1B3D-487F-8A37-32D38127465F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FAD8A60-1B3D-487F-8A37-32D38127465F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B425DF2-F11D-4D58-825C-1D53370AD743}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B425DF2-F11D-4D58-825C-1D53370AD743}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B425DF2-F11D-4D58-825C-1D53370AD743}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B425DF2-F11D-4D58-825C-1D53370AD743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49E46386-499F-4F18-B026-D6EF0D0CE80C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49E46386-499F-4F18-B026-D6EF0D0CE80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49E46386-499F-4F18-B026-D6EF0D0CE80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49E46386-499F-4F18-B026-D6EF0D0CE80C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
