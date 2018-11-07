@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rave-Dashboard", "Rave\Rave-Dashboard.csproj", "{2FAD8A60-1B3D-487F-8A37-32D38127465F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rave-Rest-API", "Rave-Rest-API\Rave-Rest-API.csproj", "{2B425DF2-F11D-4D58-825C-1D53370AD743}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rave-API", "Rave-Rest-API\Rave-API.csproj", "{2B425DF2-F11D-4D58-825C-1D53370AD743}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
